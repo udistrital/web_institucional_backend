@@ -1,0 +1,33 @@
+uuid: f730945c-1ddc-4c1a-a7b8-6e3b0f8dc35b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_poster
+    - node.type.article
+  module:
+    - image
+    - user
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  field_poster:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

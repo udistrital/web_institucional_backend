@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAUD 90.4 FM - Universidad Distrital</title>
+
+    <!-- Fuentes Institucionales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN para desarrollo rápido) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de tokens de diseño basados en la Guía de Imagen
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ud: {
+                            red: '#e4032e',
+                            black: '#000000',
+                            yellow: '#ffdf05',
+                            purple: '#7f0087'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen pb-24">
+
+    <!-- 1. HEADER INSTITUCIONAL -->
+    <header class="bg-white border-b-4 border-ud-red sticky top-0 z-40 shadow-sm" role="banner">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="bg-ud-red text-white font-display font-black text-3xl px-3 py-1 rounded-l-full rounded-r-md">
+                    UD
+                </div>
+                <h1 class="font-display font-bold text-xl uppercase tracking-wide text-ud-black leading-tight">
+                    LAUD 90.4 FM <br> <span class="text-sm text-gray-500 font-normal">La verdadera alternativa</span>
+                </h1>
+            </div>
+            <nav aria-label="Navegación principal">
+                <ul class="hidden md:flex gap-8 font-display font-semibold text-sm">
+                    <li><a href="#" class="hover:text-ud-red transition-colors">Inicio</a></li>
+                    <li><a href="#parrilla" class="hover:text-ud-red transition-colors">Programación</a></li>
+                    <li><a href="#podcasts" class="hover:text-ud-red transition-colors">Podcasts</a></li>
+                    <li><a href="#noticias" class="hover:text-ud-red transition-colors">Noticias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main" class="flex-grow">
+
+        <!-- 2. HERO / LO MÁS DESTACADO -->
+        <section aria-labelledby="hero-title" class="bg-ud-black text-white py-20 px-4 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10">
+                <div>
+                    <span
+                        class="inline-block bg-ud-yellow text-ud-black font-display font-bold px-3 py-1 text-xs mb-4 uppercase rounded">
+                        Al Aire
+                    </span>
+                    <h2 id="hero-title" class="font-display font-black text-5xl mb-4">Revista de la Mañana</h2>
+                    <p class="font-sans text-lg text-gray-300 mb-8 max-w-md">
+                        Análisis, noticias y entrevistas con los protagonistas de la actualidad universitaria y
+                        nacional.
+                    </p>
+                    <button id="hero-play-btn"
+                        class="bg-ud-red hover:bg-red-700 text-white font-display font-bold py-3 px-8 rounded-full flex items-center gap-2 transition-all">
+                        <svg class="w-6 h-6 btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <span class="btn-text">ESCUCHAR EN VIVO</span>
+                    </button>
+                </div>
+                <div class="hidden md:block">
+                    <div
+                        class="aspect-video bg-gray-800 rounded-lg shadow-2xl flex items-center justify-center border border-gray-700 text-gray-500 font-display">
+                        [ Imagen Transmisión ]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PODCASTS ON-DEMAND -->
+        <section id="podcasts" class="max-w-7xl mx-auto px-4 py-16" aria-labelledby="podcast-title">
+            <h2 id="podcast-title"
+                class="font-display font-bold text-3xl text-ud-black mb-8 border-l-4 border-ud-purple pl-4">
+                Últimos Podcasts
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tarjeta Podcast -->
+                <article
+                    class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden group cursor-pointer">
+                    <div class="aspect-square bg-gray-200 relative flex items-center justify-center text-gray-400">
+                        [ Cover ]
+                        <button
+                            class="absolute bottom-4 right-4 bg-ud-purple text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                            aria-label="Reproducir episodio">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-ud-purple font-display font-bold text-xs uppercase">Cultura</span>
+                        <h3 class="font-display font-semibold text-lg mt-1 mb-2 leading-tight">La ruta del arte
+                            contemporáneo</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">Un recorrido por las nuevas narrativas estéticas
+                            en Bogotá.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. REPRODUCTOR STICKY (Fijo al fondo) -->
+    <aside class="fixed bottom-0 left-0 w-full bg-ud-black text-white border-t-2 border-ud-red shadow-2xl z-50 h-20"
+        aria-label="Reproductor de audio">
+        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gray-800 rounded flex items-center justify-center">
+                    <span class="animate-pulse bg-ud-red w-3 h-3 rounded-full"></span>
+                </div>
+                <div>
+                    <div class="text-xs text-gray-400 font-display font-bold uppercase">En vivo ahora</div>
+                    <div class="font-sans font-semibold">LAUD 90.4 FM Estéreo</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Etiqueta de Audio Oculta -->
+                <audio id="laud-audio" src="https://icecasthd.net:9099/stream"></audio>
+
+                <button id="sticky-play-btn"
+                    class="bg-white text-ud-black hover:bg-ud-red hover:text-white p-3 rounded-full transition-colors"
+                    aria-label="Reproducir/Pausar">
+                    <svg class="w-8 h-8 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 5. LÓGICA JAVASCRIPT DEL REPRODUCTOR -->
+    <script>
+        const audio = document.getElementById('laud-audio');
+        const heroBtn = document.getElementById('hero-play-btn');
+        const stickyBtn = document.getElementById('sticky-play-btn');
+
+        // Iconos SVG
+        const iconPlay = '<path d="M8 5v14l11-7z"/>';
+        const iconPause = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                updateUI(false);
+            } else {
+                audio.play();
+                updateUI(true);
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function updateUI(playing) {
+            // Actualizar botón Hero
+            const heroIcon = heroBtn.querySelector('.btn-icon');
+            const heroText = heroBtn.querySelector('.btn-text');
+            heroIcon.innerHTML = playing ? iconPause : iconPlay;
+            heroText.textContent = playing ? 'PAUSAR' : 'ESCUCHAR EN VIVO';
+
+            // Actualizar botón Sticky
+            const stickyIcon = stickyBtn.querySelector('.play-icon');
+            stickyIcon.innerHTML = playing ? iconPause : iconPlay;
+        }
+
+        heroBtn.addEventListener('click', toggleAudio);
+        stickyBtn.addEventListener('click', toggleAudio);
+    </script>
+</body>
+
+</html>

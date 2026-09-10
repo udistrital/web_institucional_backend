@@ -1,0 +1,30 @@
+/.editorconfig
+/.gitattributes
+
+# Se regeneran con composer install
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# Archivos subidos por usuarios y configuración local
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings.local.php
+
+# Secretos — NUNCA al git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.sql
+*.sql.gz
+
+# Sistema
+.DS_Store
+.idea/
+.vscode/
