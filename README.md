@@ -119,10 +119,12 @@ Para exportar cambios hechos en Drupal desde la raíz del entorno Compose:
 
 ```bash
 docker compose exec backend vendor/bin/drush config:export -y
-docker compose exec backend tar -cf - -C /var/www/html config/sync | tar -xf - -C web_institucional_backend
+docker compose exec backend tar --exclude='config/sync/social_auth_entra_id.settings.yml' -cf - -C /var/www/html config/sync | tar -xf - -C web_institucional_backend
 ```
 
-Después revisa los archivos exportados en `config/sync/` antes de publicarlos.
+El archivo `social_auth_entra_id.settings.yml` se excluye porque sus credenciales
+se cargan desde `.env`. Después revisa los archivos exportados en `config/sync/`
+antes de publicarlos.
 
 ## Contenido y archivos
 
@@ -172,6 +174,9 @@ despliegue se debe instalar y configurar el adaptador S3 elegido para Drupal.
 | `DB_PORT` | Puerto de MySQL; normalmente `3306` |
 | `HASH_SALT` | Sal única para Drupal |
 | `TRUSTED_HOST_PATTERN` | Hosts permitidos por Drupal |
+| `ENTRA_ID_CLIENT_ID` | ID de cliente de la aplicación Microsoft Entra ID |
+| `ENTRA_ID_CLIENT_SECRET` | Secreto de cliente de Microsoft Entra ID |
+| `ENTRA_ID_TENANT_ID` | ID del tenant de Microsoft Entra ID |
 
 En producción, las variables deben gestionarse mediante secretos de AWS, no
 mediante archivos `.env` dentro de la imagen.

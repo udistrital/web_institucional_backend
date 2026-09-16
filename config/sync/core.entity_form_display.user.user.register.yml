@@ -1,8 +1,9 @@
-uuid: ded7685d-2fd5-49b3-89ec-24070566a6ea
+uuid: 71fe5fb4-8375-46e2-90d3-ae0c2df11860
 langcode: es
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_form_mode.user.register
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -10,26 +11,20 @@ dependencies:
     - user
 _core:
   default_config_hash: Yj33guGRXeB-uq182k6bwtAUtKGpO17nkYxn8FnjhBM
-id: user.user.default
+id: user.user.register
 targetEntityType: user
 bundle: user
-mode: default
+mode: register
 content:
   account:
     weight: -10
     region: content
-    settings: {  }
-    third_party_settings: {  }
   language:
     weight: 0
     region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-    settings: {  }
-    third_party_settings: {  }
   user_picture:
     type: image_image
     weight: -1
