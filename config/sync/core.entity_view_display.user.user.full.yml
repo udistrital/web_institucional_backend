@@ -1,21 +1,29 @@
-uuid: b26fd55f-8169-4fa9-bcdd-753ec17e7983
+uuid: c92aa1dd-a85c-4359-b051-65ca557ad22c
 langcode: es
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.user.compact
+    - core.entity_view_mode.user.full
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: l0SHKaTcmotRxHn_b46mtoCaIHxqgnhaT3uFH8a3c-I
-id: user.user.compact
+  default_config_hash: SULWJMy7nHcntPqaIZ7FlQPf_XzIiC5tnUCKattDCEI
+id: user.user.full
 targetEntityType: user
 bundle: user
-mode: compact
+mode: full
 content:
+  member_for:
+    weight: 5
+    region: content
   user_picture:
     type: image
     label: hidden
@@ -29,4 +37,3 @@ content:
     region: content
 hidden:
   langcode: true
-  member_for: true

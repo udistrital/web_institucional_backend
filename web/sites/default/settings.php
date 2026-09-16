@@ -905,6 +905,10 @@ if (file_exists(DRUPAL_ROOT . '/../.env')) {
   $dotenv->load();
 }
 
+$config['social_auth_entra_id.settings']['client_id'] = getenv('ENTRA_ID_CLIENT_ID') ?: '';
+$config['social_auth_entra_id.settings']['client_secret'] = getenv('ENTRA_ID_CLIENT_SECRET') ?: '';
+$config['social_auth_entra_id.settings']['tenant_id'] = getenv('ENTRA_ID_TENANT_ID') ?: '';
+
 $databases['default']['default'] = [
   'database'  => getenv('DB_DATABASE'),
   'username'  => getenv('DB_USERNAME'),

@@ -1,0 +1,27 @@
+uuid: cbe63ad6-2294-490a-bfbe-0dbc9cead802
+langcode: es
+status: true
+dependencies:
+  module:
+    - social_auth_entra_id
+    - system
+  theme:
+    - olivero
+id: olivero_entraidloginblock
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: entra_id_login_block
+settings:
+  id: entra_id_login_block
+  label: 'Entra ID Login Block'
+  label_display: visible
+  provider: social_auth_entra_id
+  login_text: '<i class="fa-brands fa-microsoft"></i> Log in with Microsoft Entra ID'
+  custom_class: 'btn btn-primary'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/login

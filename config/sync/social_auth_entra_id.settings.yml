@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: poCVHtDfUKwxqZbjg_6jl6AjDN70omTmHM97Q_M-McI
+client_id: ''
+client_secret: ''
+tenant_id: ''
+account_type: common
+login_behavior: register_and_login
+allowed_domains: ''
+block_user_1: true
+block_admin_role: true

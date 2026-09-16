@@ -1,40 +1,42 @@
-uuid: 7410b6a7-9302-4da8-9b4f-20e900699d92
+uuid: f36c308b-af94-437a-ac5e-fe61e53762fd
 langcode: es
 status: true
 dependencies:
   module:
-    - dblog
+    - link
+    - redirect
     - user
 _core:
-  default_config_hash: QxV85zTbzQHWnwqOjUQ9k-Hza0YP94TJebVvD1rVucg
-id: watchdog
-label: Guardián
+  default_config_hash: DexqLBdD7TB7piALIPEvcHI9NvY1BNibYaTSF-aJWUw
+id: redirect
+label: Redirección
 module: views
-description: 'Mensajes recientes del registro'
+description: 'List of redirects'
 tag: ''
-base_table: watchdog
-base_field: wid
+base_table: redirect
+base_field: rid
 display:
   default:
     id: default
-    display_title: 'Por defecto'
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
-      title: 'Mensajes recientes del registro'
+      title: Redirección
       fields:
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
+        redirect_bulk_form:
+          id: redirect_bulk_form
+          table: redirect
+          field: redirect_bulk_form
           relationship: none
           group_type: group
-          admin_label: Icono
-          plugin_id: custom
+          admin_label: ''
+          entity_type: redirect
+          plugin_id: redirect_bulk_form
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: ''
             make_link: false
             path: ''
@@ -61,278 +63,102 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: icon
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-        wid:
-          id: wid
-          table: watchdog
-          field: wid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          label: WID
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-        severity:
-          id: severity
-          table: watchdog
-          field: severity
+          action_title: 'With selection'
+          include_exclude: exclude
+          selected_actions: {  }
+        redirect_source__path:
+          id: redirect_source__path
+          table: redirect
+          field: redirect_source__path
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: machine_name
-          label: Gravedad
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          machine_name: false
-        type:
-          id: type
-          table: watchdog
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          label: Tipo
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-        timestamp:
-          id: timestamp
-          table: watchdog
-          field: timestamp
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: date
-          label: Fecha
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          date_format: short
-          custom_date_format: ''
-          timezone: ''
-        message:
-          id: message
-          table: watchdog
-          field: message
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: dblog_message
-          label: Mensaje
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'admin/reports/dblog/event/{{ wid }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: '{{ message }}'
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 56
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: true
-            trim: true
-            preserve_tags: ''
-            html: true
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          replace_variables: true
-        name:
-          id: name
-          table: users_field_data
-          field: name
-          relationship: uid
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: name
+          entity_type: redirect
+          entity_field: redirect_source
           plugin_id: field
-          label: User
+          label: Desde
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: path
+          type: redirect_source
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        redirect_redirect__uri:
+          id: redirect_redirect__uri
+          table: redirect
+          field: redirect_redirect__uri
+          entity_type: redirect
+          entity_field: redirect_redirect
+          plugin_id: field
+        enabled:
+          id: enabled
+          table: redirect
+          field: enabled
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: redirect
+          entity_field: enabled
+          plugin_id: field
+          label: Activado
           exclude: false
           alter:
             alter_text: false
@@ -374,9 +200,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: user_name
+          type: boolean
           settings:
-            link_to_entity: true
+            format: enabled-disabled
+            format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -387,15 +215,31 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        link:
-          id: link
-          table: watchdog
-          field: link
+        status_code:
+          id: status_code
+          table: redirect
+          field: status_code
+          entity_type: redirect
+          entity_field: status_code
+          plugin_id: field
+        language:
+          id: language
+          table: redirect
+          field: language
+          entity_type: redirect
+          entity_field: language
+          plugin_id: field
+        created:
+          id: created
+          table: redirect
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: dblog_operations
-          label: Operaciones
+          entity_type: redirect
+          entity_field: created
+          plugin_id: date
+          label: Creado
           exclude: false
           alter:
             alter_text: false
@@ -436,17 +280,27 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          date_format: fallback
+          custom_date_format: ''
+          timezone: ''
+        operations:
+          id: operations
+          table: redirect
+          field: operations
+          entity_type: redirect
+          plugin_id: entity_operations
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
-          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: 'next ›'
+            previous: '‹ previous'
+            first: '« first'
+            last: 'last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Elementos por página'
@@ -455,6 +309,7 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -462,71 +317,59 @@ display:
           reset_button: true
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
-          expose_sort_order: false
+          expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
         type: perm
         options:
-          perm: 'access site reports'
+          perm: 'administer redirects'
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
-        area:
+        area_text_custom:
           id: area_text_custom
           table: views
           field: area_text_custom
           relationship: none
           group_type: group
-          admin_label: 'No hay mensajes de registro disponibles.'
+          admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No hay mensajes de registro disponibles.'
+          content: 'There is no redirect yet.'
           tokenize: false
-      sorts:
-        wid:
-          id: wid
-          table: watchdog
-          field: wid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: wid
-          exposed: false
+      sorts: {  }
       arguments: {  }
       filters:
-        type:
-          id: type
-          table: watchdog
-          field: type
+        redirect_source__path:
+          id: redirect_source__path
+          table: redirect
+          field: redirect_source__path
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: dblog_types
-          operator: in
-          value: {  }
+          entity_type: redirect
+          entity_field: redirect_source
+          plugin_id: string
+          operator: contains
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
-            label: Tipo
+            operator_id: redirect_source__path_op
+            label: Desde
             description: ''
             use_operator: false
-            operator: type_op
+            operator: redirect_source__path_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: type
+            identifier: redirect_source__path
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -539,30 +382,164 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        severity:
-          id: severity
-          table: watchdog
-          field: severity
+        redirect_redirect__uri:
+          id: redirect_redirect__uri
+          table: redirect
+          field: redirect_redirect__uri
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: in_operator
+          entity_type: redirect
+          entity_field: redirect_redirect
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: redirect_redirect__uri_op
+            label: Para
+            description: ''
+            use_operator: false
+            operator: redirect_redirect__uri_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: redirect_redirect__uri
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        status_code:
+          id: status_code
+          table: redirect
+          field: status_code
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: redirect
+          entity_field: status_code
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: status_code_op
+            label: 'Código de estado'
+            description: ''
+            use_operator: false
+            operator: status_code_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status_code
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: true
+          group_info:
+            label: 'Código de estado'
+            description: ''
+            identifier: status_code
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '300 Múltiples posibilidades'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '300'
+              2:
+                title: '301 Movido permanentemente'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '301'
+              3:
+                title: '302 Encontrado'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '302'
+              4:
+                title: '303 Ver otra ubicación'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '303'
+              5:
+                title: '304 No modificado'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '304'
+              6:
+                title: '305 Usar proxy'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '305'
+              7:
+                title: '307 Redirección temporal'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '307'
+        language:
+          id: language
+          table: redirect
+          field: language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: redirect
+          entity_field: language
+          plugin_id: language
           operator: in
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: severity_op
-            label: Gravedad
+            operator_id: language_op
+            label: 'Lenguaje original'
             description: ''
             use_operator: false
-            operator: severity_op
+            operator: language_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: severity
+            identifier: language
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
             reduce: false
@@ -586,78 +563,73 @@ display:
         type: table
         options:
           grouping: {  }
-          row_class: '{{ type }} {{ severity }}'
+          row_class: ''
           default_row_class: true
           columns:
-            nothing: nothing
-            wid: wid
-            severity: severity
-            type: type
-            timestamp: timestamp
-            message: message
-            name: name
-            link: link
-          default: wid
+            redirect_source__path: redirect_source__path
+            redirect_redirect__uri: redirect_redirect__uri
+            enabled: enabled
+            status_code: status_code
+            language: language
+            created: created
+            operations: operations
+          default: created
           info:
-            nothing:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-medium
-            wid:
-              sortable: false
-              default_sort_order: desc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-low
-            severity:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-low
-            type:
+            redirect_source__path:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
-            timestamp:
+              responsive: ''
+            redirect_redirect__uri:
               sortable: true
-              default_sort_order: desc
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-low
-            message:
+              responsive: ''
+            enabled:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status_code:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            language:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            created:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-medium
-            link:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: priority-low
           override: true
           sticky: false
           summary: ''
           empty_table: false
           caption: ''
           description: ''
-          class: ''
       row:
         type: fields
       query:
@@ -668,22 +640,12 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        uid:
-          id: uid
-          table: watchdog
-          field: uid
-          relationship: none
-          group_type: group
-          admin_label: User
-          plugin_id: standard
-          required: false
-      css_class: admin-dblog
+      relationships: {  }
       header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -691,16 +653,17 @@ display:
         - url.query_args
         - user.permissions
       tags: {  }
-  page:
-    id: page
+      cacheable: false
+  page_1:
+    id: page_1
     display_title: Página
     display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/reports/dblog
+      path: admin/config/search/redirect
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -708,3 +671,4 @@ display:
         - url.query_args
         - user.permissions
       tags: {  }
+      cacheable: false
